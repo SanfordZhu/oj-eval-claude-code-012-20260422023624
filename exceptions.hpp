@@ -9,10 +9,10 @@ namespace sjtu {
 
 class exception {
 protected:
-	const std::string variant = "";
-	std::string detail = "";
+	std::string variant;
+	std::string detail;
 public:
-	exception() {}
+	exception() : variant("") {}
 	exception(const exception &ec) : variant(ec.variant), detail(ec.detail) {}
 	virtual std::string what() {
 		return variant + " " + detail;
@@ -20,19 +20,31 @@ public:
 };
 
 class index_out_of_bound : public exception {
-	/* __________________________ */
+public:
+	index_out_of_bound() {
+		variant = "index_out_of_bound";
+	}
 };
 
 class runtime_error : public exception {
-	/* __________________________ */
+public:
+	runtime_error() {
+		variant = "runtime_error";
+	}
 };
 
 class invalid_iterator : public exception {
-	/* __________________________ */
+public:
+	invalid_iterator() {
+		variant = "invalid_iterator";
+	}
 };
 
 class container_is_empty : public exception {
-	/* __________________________ */
+public:
+	container_is_empty() {
+		variant = "container_is_empty";
+	}
 };
 }
 

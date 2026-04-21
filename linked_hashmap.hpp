@@ -124,6 +124,7 @@ public:
         const linked_hashmap* map;
 
         friend class linked_hashmap;
+        friend class const_iterator;
 
     public:
         // The following code is written for the C++ type_traits library.
@@ -226,6 +227,7 @@ public:
         const linked_hashmap* map;
 
         friend class iterator;
+        friend class linked_hashmap;
 
     public:
         const_iterator() : node(nullptr), map(nullptr) {}
