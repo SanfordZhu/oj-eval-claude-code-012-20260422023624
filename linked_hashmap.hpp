@@ -225,6 +225,8 @@ public:
         const Node* node;
         const linked_hashmap* map;
 
+        friend class iterator;
+
     public:
         const_iterator() : node(nullptr), map(nullptr) {}
         const_iterator(const Node* n, const linked_hashmap* m) : node(n), map(m) {}
